@@ -1,7 +1,3 @@
-// What do we need to build?
-// 1. header, 2. menu item, 3. directory-menu,
-
-
 import React from 'react';
 import './App.css';
 
