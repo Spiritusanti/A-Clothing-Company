@@ -16,7 +16,7 @@ export const TitleContainer = styled.h2`
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 10px;
   
-      & .collection-item {
+      & > div {
         margin-bottom: 30px;
       }
 `;

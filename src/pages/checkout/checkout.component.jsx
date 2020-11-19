@@ -4,49 +4,43 @@ import { createStructuredSelector } from 'reselect';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton  from '../../components/stripe-button/stripe-button.component';
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
-import { 
-    CheckoutPageContainer,
-    CheckoutHeader,
-    HeaderBlock,
-    Total,
-    TestWarningContainer
- } from './checkout.styles';
-import './checkout.styles.scss';
+import { CheckoutHeaderContainer, CheckoutPageContainer, HeaderBlockContainer, TotalContainer, WarningContainer } from './checkout.styles';
+
 
 
 const CheckoutPage = ({cartItems, total}) => (
     <CheckoutPageContainer>
-        <CheckoutHeader>
-            <HeaderBlock>
+        <CheckoutHeaderContainer>
+            <HeaderBlockContainer>
                 <span>Product</span>
-            </HeaderBlock>
-            <HeaderBlock>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Description</span>
-            </HeaderBlock>
-            <HeaderBlock>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Quantity</span>
-            </HeaderBlock>
-            <HeaderBlock>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Price</span>
-            </HeaderBlock>
-            <HeaderBlock>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Remove</span>
-            </HeaderBlock>
-        </CheckoutHeader> 
+            </HeaderBlockContainer>
+        </CheckoutHeaderContainer> 
         {
             cartItems.map(cartItem => 
                 <CheckoutItem key={cartItem.id} cartItem={cartItem} />
             )
         }
 
-        <Total>
+        <TotalContainer>
             <span>TOTAL: ${total}</span>
-        </Total>
-        <TestWarningContainer>
+        </TotalContainer>
+        <WarningContainer>
             *Please use the following test credit card for payments*
             <br />
             4242 4242 4242 4242 - Exp: any future date MM/YY - CVV: any 3 numbers 
-        </TestWarningContainer>
+        </WarningContainer>
         <StripeCheckoutButton price={total} />
     </CheckoutPageContainer>
 );
