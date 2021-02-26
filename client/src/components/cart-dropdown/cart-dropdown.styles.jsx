@@ -10,6 +10,7 @@ export const CartDropdownContainer = styled.div`
     flex-direction: column;
     padding: 20px;
     border: 1px solid black;
+    border-radius: 10px;
     background-color: white;
     top: 90px;
     right: 40px;
@@ -18,6 +19,10 @@ export const CartDropdownContainer = styled.div`
 
 export const CartDropdownButton = styled(CustomButton)`
     margin-top: auto;
+
+    @media screen and (max-width: 800px) {
+        border-radius: 10px;
+    }
 `
 
 export const EmptyMessageCotainer = styled.span`
